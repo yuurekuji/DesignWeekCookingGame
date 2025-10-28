@@ -66,15 +66,16 @@ public class JoyconDemo : MonoBehaviour {
 				// Then call SetRumble(0,0,0) when you want to turn it off.
 			}
 
-            stick = j.GetStick();
+            //stick = j.GetStick();
 
             // Gyro values: x, y, z axis values (in radians per second)
-            gyro = j.GetGyro();
+            gyro = j.GetGyro() * 0.01f;
 
             // Accel values:  x, y, z axis values (in Gs)
-            accel = j.GetAccel();
+            accel = j.GetAccel() * 0.01f;
 
-            orientation = j.GetVector();
+            orientation = j.GetVector().normalized;
+
 			if (j.GetButton(Joycon.Button.DPAD_UP))
 			{
 				gameObject.GetComponent<Renderer>().material.color = Color.red;
@@ -83,11 +84,11 @@ public class JoyconDemo : MonoBehaviour {
 			{
 				gameObject.GetComponent<Renderer>().material.color = Color.blue;
 			}
-			
 
+			 
 			orientation.y = 0;
 			orientation.z = 0;
-			gameObject.transform.rotation = orientation;
+			gameObject.transform.rotation = orientation.normalized;
         }
     }
 }
