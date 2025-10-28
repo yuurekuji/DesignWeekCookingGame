@@ -45,7 +45,7 @@ public class KnifeMovement : MonoBehaviour
 
             orientation = j.GetVector();
 
-            Vector3 move = new Vector3( 0f, gyro.y / speed, 0f);
+            Vector3 move = new Vector3( 0, gyro.y / speed, 0f);
             gameObject.transform.position += move;
 
 

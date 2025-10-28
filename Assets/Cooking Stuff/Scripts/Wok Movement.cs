@@ -46,9 +46,12 @@ public class WokMovement : MonoBehaviour
 
             orientation = j.GetVector();
 
+
             transform.Rotate((-gyro.y / speed), 0, 0);
-           
-            
+
+            Vector3 move = new Vector3(0, 0, gyro.y / speed);
+
+            transform.position += move;
         }
 
     }
