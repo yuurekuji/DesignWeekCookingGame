@@ -69,10 +69,10 @@ public class JoyconDemo : MonoBehaviour {
             //stick = j.GetStick();
 
             // Gyro values: x, y, z axis values (in radians per second)
-            gyro = j.GetGyro() * 0.01f;
+            gyro = j.GetGyro();
 
             // Accel values:  x, y, z axis values (in Gs)
-            accel = j.GetAccel() * 0.01f;
+            accel = j.GetAccel();
 
             orientation = j.GetVector().normalized;
 
