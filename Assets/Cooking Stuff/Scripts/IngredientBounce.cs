@@ -5,6 +5,12 @@ public class IngredientBounce : MonoBehaviour
 
     public Rigidbody rb;
     public Vector3 force;
+
+    public float time = 0;
+    public float rate = 1;
+
+    public GameObject Flame;
+    float multiplyRate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,4 +26,18 @@ public class IngredientBounce : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Pan")
+        {
+            multiplyRate = Flame.GetComponent<Flame>().size;
+
+            time += Time.deltaTime;
+
+            Debug.Log(time);
+        }
+    }
+
+    
 }
