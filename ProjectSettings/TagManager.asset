@@ -10,6 +10,8 @@ TagManager:
   - Roll
   - Undefined
   - CutSushi
+  - CutSalmon
+  - CutTuna
   layers:
   - Default
   - TransparentFX

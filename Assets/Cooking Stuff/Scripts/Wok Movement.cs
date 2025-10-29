@@ -57,7 +57,9 @@ public class WokMovement : MonoBehaviour
 
             Vector3 move = new Vector3(0, 0, gyro.y / speed);
 
-            transform.position += move * Time.deltaTime;
+            transform.position += move * Time.deltaTime * speed;
         }
+
+
     }
 }

@@ -31,6 +31,8 @@ public class KnifeMovement : MonoBehaviour
     public GameObject IngredientManagerObj;
 
     public int indexIncrement;
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -92,9 +94,6 @@ public class KnifeMovement : MonoBehaviour
 
             CutCounter += 1;
 
-            
-
-
             collision.transform.localScale = new Vector3(1,y,1);
             collision.transform.position = new Vector3(x,1.5f,1.4f);
 
@@ -108,9 +107,12 @@ public class KnifeMovement : MonoBehaviour
 
                 ingredientManager.IndexIncrease(indexIncrement);
                 
-                ingredientManager.spawnSushiIngredients();
+                if(indexIncrement <= ingredientManager.SushiIngredients.Count-1)
+                {
+                    indexIncrement += 1;
+                    ingredientManager.spawnSushiIngredients();
 
-                indexIncrement += 1;
+                }
             }
         }
     }
@@ -121,7 +123,9 @@ public class KnifeMovement : MonoBehaviour
         {
             IngredientManager ingredientManager = IngredientManagerObj.GetComponent<IngredientManager>();
             ingredientManager.spawnSushiIngredients();
+
         }
+
     }
 
 }
