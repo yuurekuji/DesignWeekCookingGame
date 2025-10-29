@@ -15,8 +15,22 @@ public class KnifeMovement : MonoBehaviour
 
     public float speed;
 
+    public Rigidbody Rigidbody;
+
+    [Header("Cutting")]
+
     public GameObject CutPiece;
     public GameObject Ingredient;
+
+
+    int CutAmount;
+
+    public int CutCounter;
+
+    public int index;
+    public GameObject IngredientManagerObj;
+
+    public int indexIncrement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +42,8 @@ public class KnifeMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Rigidbody = GetComponent<Rigidbody>();
 
     }
 
@@ -47,8 +63,8 @@ public class KnifeMovement : MonoBehaviour
             orientation = j.GetVector();
 
             Vector3 move = new Vector3( 0, gyro.y / speed, 0f);
+            
             gameObject.transform.position += move * Time.deltaTime;
-
 
         }
 
@@ -58,22 +74,49 @@ public class KnifeMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Roll")
         {
+
             Ingredient = collision.gameObject;
             CutPiece = Ingredient.GetComponent<IngredientCut>().CutPiece;
+            CutAmount = Ingredient.GetComponent<IngredientCut>().NumOfCuts;
 
+            
 
             float x = collision.transform.position.x;
+
             float y = collision.gameObject.transform.localScale.y;
-            Debug.Log("sus");
+            
             Instantiate(CutPiece);
 
-            y -= 0.25f;
-            x += 0.2f;
+            y -= 1f / CutAmount;
+            x += 1f / CutAmount;
+
+            CutCounter += 1;
+
+            
+
 
             collision.transform.localScale = new Vector3(1,y,1);
             collision.transform.position = new Vector3(x,1.5f,1.4f);
-            
 
+            if (CutCounter == CutAmount)
+            {
+                
+                Destroy(collision.gameObject);
+
+
+                IngredientManager ingredientManager = IngredientManagerObj.GetComponent<IngredientManager>();
+
+                ingredientManager.IndexIncrease(1);
+                CutCounter = 0;
+
+                ingredientManager.spawnSushiIngredients();
+
+
+
+
+
+            }
         }
     }
+
 }

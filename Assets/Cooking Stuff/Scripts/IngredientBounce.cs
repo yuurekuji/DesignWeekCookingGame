@@ -10,7 +10,7 @@ public class IngredientBounce : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        force = new Vector3(80, 80, 0);
+        force = new Vector3(200, 200, 0);
 
         rb.AddForce(force, ForceMode.Force);
     }
