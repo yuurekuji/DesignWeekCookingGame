@@ -11,6 +11,8 @@ public class IngredientBounce : MonoBehaviour
 
     public GameObject Flame;
     float multiplyRate;
+
+    public float cookingSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,7 +35,7 @@ public class IngredientBounce : MonoBehaviour
         {
             multiplyRate = Flame.GetComponent<Flame>().size;
 
-            time += Time.deltaTime;
+            time += Time.deltaTime * multiplyRate * cookingSpeed;
 
             Debug.Log(time);
         }
