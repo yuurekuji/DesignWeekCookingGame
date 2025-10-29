@@ -31,8 +31,22 @@ public class IngredientBounce : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+
+        if(gameObject.tag == "CutSushi")
+        {
+            cookingSpeed = 7;
+        }
+        if(gameObject.tag == "CutSalmon")
+        {
+            cookingSpeed = 10;
+        }
+        if(gameObject.tag == "CutTuna")
+        {
+            cookingSpeed = 12;
+        }
         if(collision.gameObject.tag == "Pan")
         {
+
             multiplyRate = Flame.GetComponent<Flame>().size;
 
             time += Time.deltaTime * multiplyRate * cookingSpeed;
