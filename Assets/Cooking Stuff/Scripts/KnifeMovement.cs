@@ -16,6 +16,7 @@ public class KnifeMovement : MonoBehaviour
     public float speed;
 
     public GameObject CutPiece;
+    public GameObject Ingredient;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,15 +58,22 @@ public class KnifeMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Roll")
         {
+            Ingredient = collision.gameObject;
+            CutPiece = Ingredient.GetComponent<IngredientCut>().CutPiece;
 
+
+            float x = collision.transform.position.x;
             float y = collision.gameObject.transform.localScale.y;
             Debug.Log("sus");
             Instantiate(CutPiece);
 
-            y -= 0.25f ;
+            y -= 0.25f;
+            x += 0.2f;
 
             collision.transform.localScale = new Vector3(1,y,1);
+            collision.transform.position = new Vector3(x,1.5f,1.4f);
             
+
         }
     }
 }
