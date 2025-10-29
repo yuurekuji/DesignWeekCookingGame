@@ -44,7 +44,7 @@ public class KnifeMovement : MonoBehaviour
         }
 
         Rigidbody = GetComponent<Rigidbody>();
-
+        indexIncrement = 1;
     }
 
     // Update is called once per frame
@@ -102,20 +102,25 @@ public class KnifeMovement : MonoBehaviour
             {
                 
                 Destroy(collision.gameObject);
-
+                CutCounter = 0;
 
                 IngredientManager ingredientManager = IngredientManagerObj.GetComponent<IngredientManager>();
 
-                ingredientManager.IndexIncrease(1);
-                CutCounter = 0;
-
+                ingredientManager.IndexIncrease(indexIncrement);
+                
                 ingredientManager.spawnSushiIngredients();
 
-
-
-
-
+                indexIncrement += 1;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (CutCounter == CutAmount)
+        {
+            IngredientManager ingredientManager = IngredientManagerObj.GetComponent<IngredientManager>();
+            ingredientManager.spawnSushiIngredients();
         }
     }
 
