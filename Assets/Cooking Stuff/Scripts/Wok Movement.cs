@@ -34,6 +34,12 @@ public class WokMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+    }
+
+    private void FixedUpdate()
+    {
         if (joycons.Count > 0)
         {
             Joycon j = joycons[jc_ind];
@@ -47,12 +53,11 @@ public class WokMovement : MonoBehaviour
             orientation = j.GetVector();
 
 
-            transform.Rotate((-gyro.y / 5), 0, 0);
+            transform.Rotate((-gyro.y / 7), 0, 0);
 
             Vector3 move = new Vector3(0, 0, gyro.y / speed);
 
             transform.position += move * Time.deltaTime;
         }
-
     }
 }

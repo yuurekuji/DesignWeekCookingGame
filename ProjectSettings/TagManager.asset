@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Food
+  - Knife
+  - Pan
+  - Roll
+  - Undefined
+  - CutSushi
   layers:
   - Default
   - TransparentFX
