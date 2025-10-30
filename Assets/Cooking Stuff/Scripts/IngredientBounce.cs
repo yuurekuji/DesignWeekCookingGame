@@ -48,23 +48,22 @@ public class IngredientBounce : MonoBehaviour
         multiplyRate = Flame.GetComponent<Flame>().size;
 
 
-        if (CookingTime >= 1200)
+        if (CookingTime >= 600)
         {
             Destroy(gameObject);
 
             ingredientManager.AmtIncrease(1);
         }
 
+        
     }
 
     private void OnCollisionStay(Collision collision)
     {
-
-        if(collision.gameObject.tag == "Pan")
+        if (collision.gameObject.tag == "Pan")
         {
             CookingTime += Time.deltaTime * multiplyRate * cookingSpeed;
 
-            Debug.Log(CookingTime);
         }
     }
 
@@ -74,5 +73,7 @@ public class IngredientBounce : MonoBehaviour
         {
             transform.position = Respawn.transform.position;
         }
+
+
     }
 }

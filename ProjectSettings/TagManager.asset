@@ -16,6 +16,7 @@ TagManager:
   - IngManager
   - Ground
   - Wall
+  - Bell
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,11 @@ public class IngredientManager : MonoBehaviour
 
     public int cookingValue;
 
+    public bool IsReadyToSend = false;
+
+    public Slider Cooking;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +37,10 @@ public class IngredientManager : MonoBehaviour
         if(cookingValue == requiredCooked)
         {
             Debug.Log("doneCooking!");
+            IsReadyToSend = true;
         }
+
+
     }
 
     public void CreateRecipe(string Name)
