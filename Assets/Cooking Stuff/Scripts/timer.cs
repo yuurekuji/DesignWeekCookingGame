@@ -1,12 +1,17 @@
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
-
+    public float maxTime;
     public float time;
     public bool timerIsOn = false;
+
+    public Color filling;
+    public Slider Timer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,11 +24,23 @@ public class timer : MonoBehaviour
 
         if (timerIsOn == true){
             time += Time.deltaTime;
+            Timer.value -= Time.deltaTime;
+
         }
         
-        if (time > 60)
+        if (time > maxTime)
         {
             SceneManager.LoadScene(0);
+        }
+
+        if(Timer.value <= 31)
+        {
+            filling = Color.yellow;
+        }
+
+        else if (Timer.value <= 13)
+        {
+            filling = Color.red;
         }
     }
 
