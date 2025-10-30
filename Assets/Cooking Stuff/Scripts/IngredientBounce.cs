@@ -13,6 +13,8 @@ public class IngredientBounce : MonoBehaviour
     public float multiplyRate;
 
     public float cookingSpeed;
+    public GameObject IngredientManagerObj;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,13 +24,15 @@ public class IngredientBounce : MonoBehaviour
 
         rb.AddForce(force, ForceMode.Force);
         Flame = GameObject.FindGameObjectWithTag("Flame");
-
+        IngredientManagerObj = GameObject.FindGameObjectWithTag("IngManager");
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        IngredientManager ingredientManager = IngredientManagerObj.GetComponent<IngredientManager>();
+
         if (gameObject.tag == "CutSushi")
         {
             cookingSpeed = 0.7f;
@@ -47,6 +51,8 @@ public class IngredientBounce : MonoBehaviour
         if (CookingTime >= 1000)
         {
             Destroy(gameObject);
+
+            ingredientManager.AmtIncrease(1);
         }
 
     }

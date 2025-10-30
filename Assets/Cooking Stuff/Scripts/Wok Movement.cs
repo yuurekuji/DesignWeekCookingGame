@@ -17,6 +17,9 @@ public class WokMovement : MonoBehaviour
     public Quaternion orientation;
 
     public float speed;
+
+    public Rigidbody rb;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +31,7 @@ public class WokMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -52,12 +55,14 @@ public class WokMovement : MonoBehaviour
 
             orientation = j.GetVector();
 
+            Vector3 moveFront = new Vector3(0, 0, gyro.y / speed);
+            Vector3 moveRot = new Vector3(gyro.y / speed, 0, 0);
 
-            transform.Rotate((-gyro.y / 7), 0, 0);
+            Quaternion deltaRotation = Quaternion.Euler(-moveRot * Time.fixedDeltaTime * 70);
 
-            Vector3 move = new Vector3(0, 0, gyro.y / speed);
-
-            transform.position += move * Time.deltaTime * speed;
+            rb.MovePosition(rb.position + moveFront * Time.fixedDeltaTime * 4f);
+            rb.MoveRotation(rb.rotation * deltaRotation);
+            
         }
 
 

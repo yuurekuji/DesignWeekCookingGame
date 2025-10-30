@@ -32,6 +32,7 @@ public class KnifeMovement : MonoBehaviour
 
     public int indexIncrement;
 
+    public int count;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,7 +51,7 @@ public class KnifeMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (joycons.Count > 0)
         {
@@ -66,9 +67,9 @@ public class KnifeMovement : MonoBehaviour
 
             Vector3 move = new Vector3( 0, gyro.y / speed, 0f);
 
-            rb.linearVelocity += move * Time.deltaTime * 500f;
+            rb.linearVelocity += move * Time.deltaTime * 20;
 
-            //gameObject.transform.position += move * Time.deltaTime;
+
 
         }
 
@@ -103,12 +104,14 @@ public class KnifeMovement : MonoBehaviour
             {
                 
                 Destroy(collision.gameObject);
+
                 CutCounter = 0;
 
                 IngredientManager ingredientManager = IngredientManagerObj.GetComponent<IngredientManager>();
 
                 ingredientManager.IndexIncrease(indexIncrement);
-                
+
+
                 if(indexIncrement <= ingredientManager.SushiIngredients.Count-1)
                 {
                     indexIncrement += 1;

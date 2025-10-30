@@ -11,32 +11,38 @@ public class IngredientManager : MonoBehaviour
     public List<string> Recipe;
     public List<GameObject> SushiIngredients = new List<GameObject>();
 
-    public int requiredCuts;
+    public int requiredCooked;
 
     int index;
 
     public GameObject SushiButton;
 
+    public int cookingValue;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        index = 0;
+       cookingValue = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(cookingValue == requiredCooked)
+        {
+            Debug.Log("doneCooking!");
+        }
     }
 
     public void CreateRecipe(string Name)
     {
         if (Name == "SushiPlatter")
         {
+            requiredCooked = 13;
             SushiButton.SetActive(false);
-
-            
             spawnSushiIngredients();
+
             
         }
     }
@@ -53,5 +59,10 @@ public class IngredientManager : MonoBehaviour
         index = num;
 
         Debug.Log(index);
+    }
+    public void AmtIncrease(int num)
+    {
+        cookingValue += num;
+
     }
 }

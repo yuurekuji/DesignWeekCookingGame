@@ -156,3 +156,4 @@ MonoBehaviour:
   Flame: {fileID: 0}
   multiplyRate: 0
   cookingSpeed: 0
+  IngredientManagerObj: {fileID: 0}
