@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 163363182}
   - component: {fileID: 163363186}
   m_Layer: 0
-  m_Name: WokBlocker
+  m_Name: FoodBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,13 +221,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163363181}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.129, y: 1.556, z: 4.36}
+  m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
+  m_LocalPosition: {x: 5.07, y: 1.556, z: 1.58}
   m_LocalScale: {x: 4.4582195, y: 3.1789, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &163363186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   stick: []
   gyro: {x: 0, y: 0, z: 0}
   accel: {x: 0, y: 0, z: 0}
-  jc_ind: 0
+  jc_ind: 1
   orientation: {x: 0, y: 0, z: 0, w: 0}
   speed: 5
   rb: {fileID: 196812262}
@@ -421,6 +421,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SushiPlatter
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1405354772}
+        m_TargetAssemblyTypeName: timer, Assembly-CSharp
+        m_MethodName: startTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &805183876
@@ -758,7 +770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10a2f863bd4f50b4182aa794d1340687, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4099998
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10a2f863bd4f50b4182aa794d1340687, type: 3}
       propertyPath: m_LocalPosition.y
@@ -846,6 +858,52 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 196812264}
   m_SourcePrefab: {fileID: 100100000, guid: 10a2f863bd4f50b4182aa794d1340687, type: 3}
+--- !u!1 &1405354771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1405354773}
+  - component: {fileID: 1405354772}
+  m_Layer: 0
+  m_Name: timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1405354772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405354771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856ca11ce9b1e054e97961b6709f6478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  timerIsOn: 0
+--- !u!4 &1405354773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405354771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16256526, y: -0.6311703, z: 2.1753573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460999074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1114,7 @@ Transform:
   m_GameObject: {fileID: 1489242097}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.97, y: 0.69, z: 1.23}
+  m_LocalPosition: {x: -1.3699999, y: 0.69, z: 1.23}
   m_LocalScale: {x: 4.26605, y: 0.34788203, z: 2.2837899}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1414,7 +1472,7 @@ MonoBehaviour:
   - {fileID: 3127306986651016427, guid: b3e79fd4524dd0042829eff69a5f73d2, type: 3}
   - {fileID: 3127306986651016427, guid: b01e0e74f7a4fcf4bbd2af67038ccda7, type: 3}
   - {fileID: 3127306986651016427, guid: 71bf773a635d2ad418167cd87fdca558, type: 3}
-  requiredCooked: 0
+  requiredCooked: 13
   SushiButton: {fileID: 805183873}
   cookingValue: 0
 --- !u!4 &1845446861
@@ -1676,6 +1734,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300100503581298882, guid: b386720c02418454c877bc850cddee70, type: 3}
+      propertyPath: index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300100503581298882, guid: b386720c02418454c877bc850cddee70, type: 3}
+      propertyPath: jc_ind
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5329030160033559118, guid: b386720c02418454c877bc850cddee70, type: 3}
       propertyPath: m_Constraints
       value: 122
@@ -1686,7 +1752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6553255895744315184, guid: b386720c02418454c877bc850cddee70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.59
+      value: -0.9899999
       objectReference: {fileID: 0}
     - target: {fileID: 6553255895744315184, guid: b386720c02418454c877bc850cddee70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1746,3 +1812,4 @@ SceneRoots:
   - {fileID: 1460999078}
   - {fileID: 163363185}
   - {fileID: 1523219309}
+  - {fileID: 1405354773}

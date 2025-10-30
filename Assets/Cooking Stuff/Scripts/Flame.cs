@@ -16,7 +16,7 @@ public class Flame : MonoBehaviour
     void Update()
     {
 
-        if(size >=0 && size <= 100)
+        if (size >= 0 && size <= 100)
         {
             size -= Time.deltaTime * rate;
         }
@@ -31,7 +31,7 @@ public class Flame : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             size += growth;
         }
