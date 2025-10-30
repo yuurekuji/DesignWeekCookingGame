@@ -15,7 +15,7 @@ public class KnifeMovement : MonoBehaviour
 
     public float speed;
 
-    public Rigidbody Rigidbody;
+    public Rigidbody rb;
 
     [Header("Cutting")]
 
@@ -45,7 +45,7 @@ public class KnifeMovement : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         indexIncrement = 1;
     }
 
@@ -65,8 +65,10 @@ public class KnifeMovement : MonoBehaviour
             orientation = j.GetVector();
 
             Vector3 move = new Vector3( 0, gyro.y / speed, 0f);
-            
-            gameObject.transform.position += move * Time.deltaTime;
+
+            rb.linearVelocity += move * Time.deltaTime * 500f;
+
+            //gameObject.transform.position += move * Time.deltaTime;
 
         }
 
