@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IngredientManager : MonoBehaviour
@@ -38,6 +39,11 @@ public class IngredientManager : MonoBehaviour
         {
             Debug.Log("doneCooking!");
             IsReadyToSend = true;
+
+            if (IsReadyToSend == true && Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(2);
+            }
         }
 
 

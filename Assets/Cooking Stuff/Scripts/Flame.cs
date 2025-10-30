@@ -11,7 +11,7 @@ public class Flame : MonoBehaviour
 
     public GameObject flame;
 
-    float maxVal = 100;
+    
 
     public Slider thermost;
 

@@ -38,7 +38,7 @@ public class timer : MonoBehaviour
         if (time >= maxTime)
         {
             star3.SetActive(false);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
 
         if(Timer.value <= 31 && Timer.value >=30)
