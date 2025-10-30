@@ -9,13 +9,20 @@ public class timer : MonoBehaviour
     public float time;
     public bool timerIsOn = false;
 
-    public Color filling;
+    public GameObject Filling;
+    Color imageFill;
     public Slider Timer;
+    public bool yellow = false;
+    public bool red = false;
+
+    public GameObject star1;
+    public GameObject star2;
+    public GameObject star3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        imageFill = Filling.GetComponent<Image>().color;
     }
 
     // Update is called once per frame
@@ -28,19 +35,32 @@ public class timer : MonoBehaviour
 
         }
         
-        if (time > maxTime)
+        if (time >= maxTime)
         {
+            star3.SetActive(false);
             SceneManager.LoadScene(0);
         }
 
-        if(Timer.value <= 31)
+        if(Timer.value <= 31 && Timer.value >=30)
         {
-            filling = Color.yellow;
+            yellow = true;
         }
 
-        else if (Timer.value <= 13)
+        else if (Timer.value <= 13 && Timer.value >=12)
         {
-            filling = Color.red;
+            red = true;
+            yellow = false;
+        }
+
+        if(yellow == true)
+        {
+            Filling.GetComponent<Image>().color = Color.yellow;
+            star1.SetActive(false);
+        }
+        else if(red == true)
+        {
+            Filling.GetComponent<Image>().color = Color.red;
+            star2.SetActive(false);
         }
     }
 

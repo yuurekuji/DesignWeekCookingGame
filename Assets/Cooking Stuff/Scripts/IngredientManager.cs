@@ -23,13 +23,12 @@ public class IngredientManager : MonoBehaviour
 
     public Slider Cooking;
 
-    public GameObject filling;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        index = 0;
-       cookingValue = 0;;
+       cookingValue = 0;
     }
 
     // Update is called once per frame
