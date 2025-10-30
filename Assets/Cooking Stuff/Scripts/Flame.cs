@@ -35,5 +35,6 @@ public class Flame : MonoBehaviour
         {
             size += growth;
         }
+        Debug.Log(size);
     }
 }
