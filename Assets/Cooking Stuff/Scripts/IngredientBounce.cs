@@ -14,7 +14,7 @@ public class IngredientBounce : MonoBehaviour
 
     public float cookingSpeed;
     public GameObject IngredientManagerObj;
-
+    public GameObject Respawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -68,5 +68,11 @@ public class IngredientBounce : MonoBehaviour
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            transform.position = Respawn.transform.position;
+        }
+    }
 }
