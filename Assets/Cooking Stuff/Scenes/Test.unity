@@ -324,7 +324,7 @@ MonoBehaviour:
   stick: []
   gyro: {x: 0, y: 0, z: 0}
   accel: {x: 0, y: 0, z: 0}
-  jc_ind: 1
+  jc_ind: 0
   orientation: {x: 0, y: 0, z: 0, w: 0}
   speed: 5
   rb: {fileID: 196812262}
@@ -1713,6 +1713,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7447108603043721749, guid: e434bd532f36c5b498f54b8232848e1a, type: 3}
+      propertyPath: rate
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447108603043721749, guid: e434bd532f36c5b498f54b8232848e1a, type: 3}
+      propertyPath: growth
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1740,7 +1748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300100503581298882, guid: b386720c02418454c877bc850cddee70, type: 3}
       propertyPath: jc_ind
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5329030160033559118, guid: b386720c02418454c877bc850cddee70, type: 3}
       propertyPath: m_Constraints
