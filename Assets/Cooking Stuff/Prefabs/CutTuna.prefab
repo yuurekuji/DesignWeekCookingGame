@@ -123,7 +123,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6252639311513513594}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9c7fb30987479904ba00b92e2ed8e946, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8454040150530938936}
   force: {x: 0, y: 0, z: 0}
-  time: 0
-  rate: 1
-  Flame: {fileID: 1058779716210387995, guid: e434bd532f36c5b498f54b8232848e1a, type: 3}
+  CookingTime: 0
+  Flame: {fileID: 0}
+  multiplyRate: 0
   cookingSpeed: 0

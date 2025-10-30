@@ -12,6 +12,7 @@ TagManager:
   - CutSushi
   - CutSalmon
   - CutTuna
+  - Flame
   layers:
   - Default
   - TransparentFX

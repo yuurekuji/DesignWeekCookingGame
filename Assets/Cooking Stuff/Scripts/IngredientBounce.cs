@@ -6,11 +6,11 @@ public class IngredientBounce : MonoBehaviour
     public Rigidbody rb;
     public Vector3 force;
 
-    public float time = 0;
-    public float rate = 1;
+    public float CookingTime = 0;
+
 
     public GameObject Flame;
-    float multiplyRate;
+    public float multiplyRate;
 
     public float cookingSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,37 +21,44 @@ public class IngredientBounce : MonoBehaviour
         force = new Vector3(200, 200, 0);
 
         rb.AddForce(force, ForceMode.Force);
+        Flame = GameObject.FindGameObjectWithTag("Flame");
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameObject.tag == "CutSushi")
+        {
+            cookingSpeed = 0.7f;
+        }
+        if (gameObject.tag == "CutSalmon")
+        {
+            cookingSpeed = 1.0f;
+        }
+        if (gameObject.tag == "CutTuna")
+        {
+            cookingSpeed = 1.2f;
+        }
+        multiplyRate = Flame.GetComponent<Flame>().size;
+
+
+        if (CookingTime >= 1000)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnCollisionStay(Collision collision)
     {
 
-        if(gameObject.tag == "CutSushi")
-        {
-            cookingSpeed = 7;
-        }
-        if(gameObject.tag == "CutSalmon")
-        {
-            cookingSpeed = 10;
-        }
-        if(gameObject.tag == "CutTuna")
-        {
-            cookingSpeed = 12;
-        }
         if(collision.gameObject.tag == "Pan")
         {
+            CookingTime += Time.deltaTime * multiplyRate * cookingSpeed;
 
-            multiplyRate = Flame.GetComponent<Flame>().size;
-
-            time += Time.deltaTime * multiplyRate * cookingSpeed;
-
-            Debug.Log(time);
+            Debug.Log(CookingTime);
         }
     }
 
