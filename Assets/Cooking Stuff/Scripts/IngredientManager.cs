@@ -19,11 +19,15 @@ public class IngredientManager : MonoBehaviour
 
     public int cookingValue;
 
+    public bool IsReadyToSend = false;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        index = 0;
-       cookingValue = 0;
+       cookingValue = 0;;
     }
 
     // Update is called once per frame
@@ -32,7 +36,10 @@ public class IngredientManager : MonoBehaviour
         if(cookingValue == requiredCooked)
         {
             Debug.Log("doneCooking!");
+            IsReadyToSend = true;
         }
+
+
     }
 
     public void CreateRecipe(string Name)

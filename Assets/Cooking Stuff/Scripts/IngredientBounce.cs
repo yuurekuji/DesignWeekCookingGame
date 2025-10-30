@@ -60,11 +60,10 @@ public class IngredientBounce : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Pan")
         {
             CookingTime += Time.deltaTime * multiplyRate * cookingSpeed;
 
-            //Debug.Log(CookingTime);
         }
     }
 
@@ -74,6 +73,7 @@ public class IngredientBounce : MonoBehaviour
         {
             transform.position = Respawn.transform.position;
         }
+
 
     }
 }
