@@ -272,7 +272,7 @@ TextureImporter:
         width: 1006
         height: 944
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,7 +294,7 @@ TextureImporter:
         width: 979
         height: 873
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,6 +303,28 @@ TextureImporter:
       bones: []
       spriteID: 815d9956b7d9a8d40990758e01492f16
       internalID: -1401020517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 2851
+        width: 1067
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bae1f702401dca498188a33da7ea25c
+      internalID: 1525689644
       vertices: []
       indices: 
       edges: []
@@ -328,6 +350,7 @@ TextureImporter:
       Toss: -1673418150
       UI_Sprites_0: -751157870
       UI_Sprites_1: -1401020517
+      UI_Sprites_2: 1525689644
       Wok Bar: 737743951
       Wok Bar Button: -1296532648
   mipmapLimitGroupName: 

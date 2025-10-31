@@ -25,6 +25,7 @@ public class IngredientManager : MonoBehaviour
     public Slider Cooking;
 
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,12 +41,10 @@ public class IngredientManager : MonoBehaviour
             Debug.Log("doneCooking!");
             IsReadyToSend = true;
 
-            if (IsReadyToSend == true && Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene(2);
-            }
+
         }
 
+        Cooking.value = cookingValue;
 
     }
 

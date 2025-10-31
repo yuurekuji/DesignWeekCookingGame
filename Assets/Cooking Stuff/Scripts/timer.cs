@@ -12,6 +12,7 @@ public class timer : MonoBehaviour
     public GameObject Filling;
     Color imageFill;
     public Slider Timer;
+    public bool green = true;
     public bool yellow = false;
     public bool red = false;
 
@@ -19,6 +20,7 @@ public class timer : MonoBehaviour
     public GameObject star2;
     public GameObject star3;
 
+    public int rate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,8 +32,8 @@ public class timer : MonoBehaviour
     {
 
         if (timerIsOn == true){
-            time += Time.deltaTime;
-            Timer.value -= Time.deltaTime;
+            time += Time.deltaTime * rate;
+            Timer.value -= Time.deltaTime * rate;
 
         }
         
@@ -44,6 +46,7 @@ public class timer : MonoBehaviour
         if(Timer.value <= 31 && Timer.value >=30)
         {
             yellow = true;
+            green = false;
         }
 
         else if (Timer.value <= 13 && Timer.value >=12)
@@ -67,6 +70,6 @@ public class timer : MonoBehaviour
     public void startTimer()
     {
         timerIsOn = true;
-        
+        rate = 1;
     }
 }
