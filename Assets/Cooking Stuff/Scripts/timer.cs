@@ -42,7 +42,7 @@ public class timer : MonoBehaviour
             star3.SetActive(false);
             SceneManager.LoadScene(3);
         }
-
+         
         if(Timer.value <= 31 && Timer.value >=30)
         {
             yellow = true;

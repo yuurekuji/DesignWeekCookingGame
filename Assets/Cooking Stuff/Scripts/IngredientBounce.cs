@@ -48,7 +48,7 @@ public class IngredientBounce : MonoBehaviour
         multiplyRate = Flame.GetComponent<Flame>().size;
 
 
-        if (CookingTime >= 600)
+        if (CookingTime >= 500)
         {
             Destroy(gameObject);
 
