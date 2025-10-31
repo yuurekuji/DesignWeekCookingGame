@@ -65,6 +65,11 @@ public class timer : MonoBehaviour
             Filling.GetComponent<Image>().color = Color.red;
             star2.SetActive(false);
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void startTimer()
@@ -72,4 +77,6 @@ public class timer : MonoBehaviour
         timerIsOn = true;
         rate = 1;
     }
+
+    
 }
